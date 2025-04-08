@@ -37,7 +37,7 @@ public class AguaDeCalzon {
         boolean juegoActivo = true;
 
         while (juegoActivo) {
-            System.out.println("\n--- Nueva Ronda ---");
+            System.out.println("\n--- Va de nuez ---");
             Jugador[] seleccionados = Utilidades.seleccionarJugadores(jugadores);
             Jugador quienPregunta = seleccionados[0];
             Jugador quienResponde = seleccionados[1];
@@ -50,9 +50,9 @@ public class AguaDeCalzon {
             boolean respuestaCorrecta = Utilidades.validarRespuesta(scanner);
             if (respuestaCorrecta) {
                 quienResponde.aumentarPuntos();
-                System.out.println("✅ Respuesta correcta. ¡Ganas un punto!");
+                System.out.println("✅ Eres la verga. ¡Ganas un punto!");
             } else {
-                System.out.println("❌ Respuesta incorrecta. ¡Tómate un shot!");
+                System.out.println("❌ MAL, eres tont@. ¡Tómate un shot por wey!");
             }
 
             mostrarPuntuaciones();
@@ -60,7 +60,7 @@ public class AguaDeCalzon {
             // Verificar si hay un ganador
             for (Jugador j : jugadores) {
                 if (j.getPuntos() >= 10) {
-                    System.out.println("\n🎉 ¡" + j.getNombre() + " ha ganado con 10 puntos! 🎉");
+                    System.out.println("\n🎉 ¡" + j.getNombre() + " es la riata y ha ganado con 10 puntos! 🎉");
                     juegoActivo = false;
                     break;
                 }

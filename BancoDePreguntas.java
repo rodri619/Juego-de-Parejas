@@ -17,18 +17,16 @@ public class BancoDePreguntas {
         preguntas.add("¿Qué es lo que más me molesta?");
         preguntas.add("¿Qué lugar sueño con visitar?");
         preguntas.add("Prefieres dormir tarde o despertar temprano?");
-        preguntas.add("Hay algo que collecione?");
+        preguntas.add("Hay algo que coleccione?");
         preguntas.add("Quien es mi mejor amig@?");
         preguntas.add("pizza con piña o sin piña?");
         preguntas.add("Soy alérgico a algo?");
-        preguntas.add("Horchata o jamaica");
         preguntas.add("Me dio covid?");
-        preguntas.add("Prefiero usar calzón o boxer/tanga?");
         preguntas.add("Como nos conocimos?");
         preguntas.add("Quién es mi superhéroe favorito?");
         preguntas.add("Tengo cirugías o algo operado?");
         preguntas.add("Si mi casa se estuviera quemando, que artículo salvaría? ");
-        preguntas.add("Cuál es mi restaurante favorito?");
+        //preguntas.add("Cuál es mi restaurante favorito?");
         preguntas.add("Qué perfume o loción utilizo?");
         preguntas.add("Cuál es mi nombre completo?");
         preguntas.add("Tengo tatuajes o pircings?");
@@ -48,14 +46,25 @@ public class BancoDePreguntas {
         preguntas.add("Quién es más alcohólic@, tu o yo perra?");
 
         preguntas.add("Cuál es mi leguaje de programación favorito?");
-        preguntas.add("Canek es mejor profesor de todo el fucking mundo?");
-        preguntas.add("Chichis o culos?");
+        //preguntas.add("Canek es mejor profesor de todo el fucking mundo?");
+        //preguntas.add("Chichis o culos?");
         preguntas.add("Messi o Cristiano?");
         preguntas.add("Qué deporte prefiero?");
-        preguntas.add("Qué día nací?");
-        preguntas.add("Algo que pienso que no te gusta de mi?");
-        preguntas.add("?");
-
+        preguntas.add("Cuál es mi fecha de nacimiento?");
+        preguntas.add("Qué estación del año es tu favorita?");
+        preguntas.add("Play Station o Xbox?");
+        preguntas.add("Frío o Calor?");
+        preguntas.add("Película favorita");
+        preguntas.add("Me gustaría tatuarme?");
+        preguntas.add("Equipo favorito de cualquier deporte");
+        preguntas.add("Horchata o jamaica");
+        preguntas.add("Cantante favorito");
+        preguntas.add("Género musical favorito");
+        preguntas.add("Me gustaría tener hijos?");
+        preguntas.add("Que día de la semana prefieres");
+        preguntas.add("Salado o dulce");
+        preguntas.add("Flores favoritas");
+        preguntas.add("Cuántos herman@s tengo?");
     }
 
     public String obtenerPreguntaAleatoria() {
