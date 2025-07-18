@@ -7,7 +7,7 @@ public class Utilidades {
 
     public static Jugador[] seleccionarJugadores(ArrayList<Jugador> jugadores) {
         if (jugadores.size() < 2){
-            System.out.println("No seas pendej@, se necesitan mínimo 2 jugadores");
+            System.out.println("Se necesitan mínimo 2 jugadores");
             return null;
         }
         int index1 = random.nextInt(jugadores.size());
@@ -21,7 +21,7 @@ public class Utilidades {
     }
 
     public static boolean validarRespuesta(Scanner scanner){
-        System.out.println("La respuesta que te dijo es@ idiota es correcta o nel? (1 = Correcta, 2 = Incorrecta)");
+        System.out.println("La respuesta que te dijo es correcta o no? (1 = Correcta, 2 = Incorrecta)");
         int opcion;
         while (true) {
             try {
@@ -29,7 +29,7 @@ public class Utilidades {
                 if (opcion == 1 || opcion == 2){
                     return opcion == 1;
                 }
-                System.out.println("Ingresa 1 si fue Correcta o 2 si la cagaste");
+                System.out.println("Ingresa 1 si fue Correcta o 2 si fue incorrecta");
             } catch (NumberFormatException e) {
                 System.out.println("Entrada no válida. Inténtalo de nuevo.");
             }

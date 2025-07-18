@@ -13,58 +13,57 @@ public class AguaDeCalzon {
     }
 
     public void iniciarJuego() {
-        System.out.println("¡Bienvenidos a Agua de Calzón! 🍷🔥");
-        System.out.print("Ingresa la cantidad de jugadores (2-10): ");
-        
-        int cantidadJugadores;
-        while (true) {
-            cantidadJugadores = scanner.nextInt();
-            scanner.nextLine(); // Limpiar buffer
-            if (cantidadJugadores >= 2 && cantidadJugadores <= 10) break;
-            System.out.print("Número inválido. Ingresa un número entre 2 y 10: ");
-        }
+        System.out.print("❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️\n");
+        System.out.println("❤️ ¡Bienvenidos a Agua de Calzón (LA PRUEBA) - Versión Parejas! 💑 ❤️");
+        System.out.print("❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️\n");
 
-        for (int i = 1; i <= cantidadJugadores; i++) {
-            System.out.print("Nombre del jugador " + i + ": ");
-            String nombre = scanner.nextLine();
-            jugadores.add(new Jugador(nombre));
-        }
+        // Solo se piden 2 jugadores
+        System.out.print("Ingrese el nombre de la novia: ");
+        String nombre1 = scanner.nextLine();
+        jugadores.add(new Jugador(nombre1));
+
+        System.out.print("Ingrese el nombre del novio: ");
+        String nombre2 = scanner.nextLine();
+        jugadores.add(new Jugador(nombre2));
 
         jugarRondas();
     }
 
     private void jugarRondas() {
         boolean juegoActivo = true;
+        int turno = 0;
 
         while (juegoActivo) {
-            System.out.println("\n--- Va de nuez ---");
-            Jugador[] seleccionados = Utilidades.seleccionarJugadores(jugadores);
-            Jugador quienPregunta = seleccionados[0];
-            Jugador quienResponde = seleccionados[1];
+            System.out.println("\n--- Nueva Ronda ---");
+
+            Jugador quienPregunta = jugadores.get(turno % 2);
+            Jugador quienResponde = jugadores.get((turno + 1) % 2);
 
             System.out.println(quienPregunta.getNombre() + " hará una pregunta a " + quienResponde.getNombre());
             String pregunta = bancoDePreguntas.obtenerPreguntaAleatoria();
             System.out.println("📢 Pregunta: " + pregunta);
 
-            // Validar respuesta correcta o incorrecta
+            // Validar respuesta
             boolean respuestaCorrecta = Utilidades.validarRespuesta(scanner);
             if (respuestaCorrecta) {
                 quienResponde.aumentarPuntos();
-                System.out.println("✅ Eres la verga. ¡Ganas un punto!");
+                System.out.println("✅ ¡Correcto! Muy bien " + quienResponde.getNombre() + " gana un punto.");
             } else {
-                System.out.println("❌ MAL, eres tont@. ¡Tómate un shot por wey!");
+                System.out.println("❌ ¡Incorrecto! Como no supiste esa respuesta si era obvia " + quienResponde.getNombre());
             }
 
             mostrarPuntuaciones();
 
             // Verificar si hay un ganador
             for (Jugador j : jugadores) {
-                if (j.getPuntos() >= 10) {
-                    System.out.println("\n🎉 ¡" + j.getNombre() + " es la riata y ha ganado con 10 puntos! 🎉");
+                if (j.getPuntos() >= 100) {
+                    System.out.println("\n🎉 ¡" + j.getNombre() + " ha ganado con 25 puntos! 🎉");
                     juegoActivo = false;
                     break;
                 }
             }
+
+            turno++;
         }
     }
 
